@@ -1,6 +1,6 @@
 [submodule "ChibiOS"]
 	path = ChibiOS
-	url = git@github.com:dron0gus/ChibiOS.git]
+	url = git@github.com:dron0gus/ChibiOS.git
 [submodule "openocd"]
 	path = openocd
 	url = git@github.com:dron0gus/openocd.git
