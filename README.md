@@ -26,6 +26,10 @@ Application inplementing USB device with two ACM ports. OTG1 port is used.
 
 Simple shell is executed on both ACM ports. Few commands are available. Including RT and OSLIB tests. Type 'help' to see some tips.
 
+Known issues:
+
+- USB device is not recognized when connected through **some** HUBs.
+
 ## OpenOCD with Artery support
 
 See openocd for OpenOCD with Artery chip support.
