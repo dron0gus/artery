@@ -1,8 +1,36 @@
 # Attemp to port ChibiOS to Artery AT32F435/7 chip
 
-See ChibiOS/demos/STM32/RT-AT32F435-ARTERY144 for demo project for Artery AT-START-F435 board. Only blinks LEDs for now.
+AT32F435/437 looks very similas to STM32F4XX chips
 
-See openocd for OpenOCD with Artery chip support. See demos/STM32/RT-AT32F435-ARTERY144/at32f4x.cfg openocd_artery.sh and gdb.sh as example on how to flash and run.
+To keep compatibility with STM32 drivers I keep STM32_ prefix for all defines
+
+Also I keep STM32 register naming (where possible)
+
+STM32F435 was used as baseline for this port. I did not fix copyrights and comments yet. So don't be confused by STM copyright and other STM32 stuff inside AT32 directories.
+
+## Demo projects:
+
+### RT-AT32F435-ARTERY144 demo
+
+See ChibiOS/demos/STM32/RT-AT32F435-ARTERY144
+
+Simple application blinking LEDs and executing RT and OSLIB tests on button press.
+
+Outputs over serial port (USART1) at 38400. On Artery AT-START-F435 this USART is connected to debuger. Debugger connected to PC creates ttyACM device and forwards all AT32 output to this tty.
+
+### USB_CDC_IAD demo
+
+See ChibiOS/testhal/AT32/AT32F4xx/USB_CDC_IAD
+
+Application inplementing USB device with two ACM ports. OTG1 port is used.
+
+Simple shell is executed on both ACM ports. Few commands are available. Including RT and OSLIB tests. Type 'help' to see some tips.
+
+## OpenOCD with Artery support
+
+See openocd for OpenOCD with Artery chip support.
+
+See ChibiOsdemos/STM32/RT-AT32F435-ARTERY144/at32f4x.cfg openocd_artery.sh and gdb.sh as example on how to flash and run.
 
 ## Current status
 
